@@ -608,12 +608,12 @@ const tests = function(web3) {
       }
     });
 
-    it("should succeed with right nonce", async function() {
+    it.only("should succeed with right nonce", async function() {
       const nonce = await web3.eth.getTransactionCount(accounts[0]);
 
       const transaction = new Transaction({
         value: "0x10000000",
-        gasLimit: "0x33450",
+        gasLimit: "0x50",
         from: accounts[0],
         to: accounts[1],
         nonce: to.rpcQuantityHexString(nonce)
